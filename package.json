@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require test/globals.js ./test/**/**.spec.js"
+    "test": "nyc mocha --compilers js:babel-core/register --require test/globals.js ./test/**/**.spec.js"
   },
   "repository": {
     "type": "git",
