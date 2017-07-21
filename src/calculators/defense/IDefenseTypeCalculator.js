@@ -4,6 +4,7 @@ import CombatResult from "../CombatResult";
 export default class IDefenseTypeCalculator extends Calculator{
     constructor(character, dice){
         super(character, dice);
+        /* istanbul ignore next */
         this.damage = 0;
     }
 

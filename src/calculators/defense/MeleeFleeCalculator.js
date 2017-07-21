@@ -8,6 +8,7 @@ export default class MeleeFleeCalculator extends IDefenseTypeCalculator{
     }
 
     getCombatResult(){
+        /* istanbul ignore next */
         let result = super.getCombatResult();
         if(!result.needFullDamage){
             result.setType(CombatResultTypes.COUNTER);

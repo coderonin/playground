@@ -8,6 +8,7 @@ export default class MeleeDefenseCalculator extends IDefenseTypeCalculator{
     }
 
     getCombatResult(){
+        /* istanbul ignore next */
         let result = super.getCombatResult();
         if(!result.needFullDamage){
             result.setType(CombatResultTypes.BLOCK);
