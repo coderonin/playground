@@ -1,9 +1,9 @@
 export default class Character {
     constructor(dex, spr, agi, str){
-        this._dex = dex;
-        this._spr = spr;
-        this._agi = agi;
-        this._str = str;
+        this.dex = dex;
+        this.spr = spr;
+        this.agi = agi;
+        this.str = str;
         this._bonus = {
             dex: 0,
             spr: 0,

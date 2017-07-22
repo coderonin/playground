@@ -36,4 +36,22 @@ describe("Character class tests", () => {
         expect(char.flee).to.be.equals(7);
         expect(char.defense).to.be.equals(7);
     });
+
+    it("should handle a weapon", () => {
+        let char = new Character(0, 0, 0, 0);
+
+        char.setWeapon({
+            name:"weapon test",
+            getBonus: () => 10,
+            getDamage: () => 5
+        });
+        expect(char._weapon.name).to.be.equals("weapon test");
+        expect(char.getWeaponBonus()).to.be.equals(10);
+        expect(char.getWeaponDamage()).to.be.equals(5);
+
+        char.setWeapon(null);
+        expect(char._weapon).to.be.null;
+        expect(char.getWeaponBonus()).to.be.equals(0);
+        expect(char.getWeaponDamage()).to.be.equals(0);
+    });
 });
