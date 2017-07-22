@@ -1,11 +1,11 @@
-import MeleeDefenseCalculator from "../../src/calculators/defense/MeleeDefenseCalculator";
+import PhisicalDefenseCalculator from "../../src/calculators/defense/PhisicalDefenseCalculator";
 import CombatResult from "../../src/calculators/CombatResult";
 import CombatResultTypes from "../../src/enums/CombatResultTypes";
 
 describe("CombatResult tests", () => {
 
     it("should create a CombatResult", () => {
-        let calculator = new MeleeDefenseCalculator(null, 0),
+        let calculator = new PhisicalDefenseCalculator(null, 0),
             result = new CombatResult(calculator);
 
         expect(result.defenseCalculator).to.be.equals(calculator);
@@ -13,7 +13,7 @@ describe("CombatResult tests", () => {
     });
 
     it("should set the value for needFullDamage", () => {
-        let calculator = new MeleeDefenseCalculator(null, 0),
+        let calculator = new PhisicalDefenseCalculator(null, 0),
             result = new CombatResult(calculator);
         result.setNeedFullDamage(true);
 
@@ -21,7 +21,7 @@ describe("CombatResult tests", () => {
     });
 
     it("should get damage calculation", () => {
-        let calculator = new MeleeDefenseCalculator(null, 0),
+        let calculator = new PhisicalDefenseCalculator(null, 0),
             result = new CombatResult(calculator);
 
         sinon.stub(calculator, "getDamage", function(dmg){

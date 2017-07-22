@@ -1,7 +1,7 @@
 import Character from '../../src/Character.js';
 import FightHandler from '../../src/handlers/FightHandler.js';
 import MeleeAttackCalculator from "../../src/calculators/attack/MeleeAttackCalculator";
-import MeleeDefenseCalculator from "../../src/calculators/defense/MeleeDefenseCalculator";
+import PhisicalDefenseCalculator from "../../src/calculators/defense/PhisicalDefenseCalculator";
 import CombatResultTypes from "../../src/enums/CombatResultTypes";
 
 let sandbox = sinon.sandbox.create(),
@@ -15,8 +15,8 @@ describe("FightHandler tests", () => {
     beforeEach("Set a sandbox", () => {
         attackRoll = sandbox.spy(MeleeAttackCalculator.prototype, "getRoll");
         attackGetBaseDamage = sandbox.spy(MeleeAttackCalculator.prototype, "getBaseDamage");
-        defenseRoll = sandbox.spy(MeleeDefenseCalculator.prototype, "getRoll");
-        defenseSetDamage = sandbox.spy(MeleeDefenseCalculator.prototype, "setDamage");
+        defenseRoll = sandbox.spy(PhisicalDefenseCalculator.prototype, "getRoll");
+        defenseSetDamage = sandbox.spy(PhisicalDefenseCalculator.prototype, "setDamage");
     });
 
     afterEach("Destroy the sandbox", () => {
@@ -32,7 +32,7 @@ describe("FightHandler tests", () => {
         let attacker = new Character(0,0,0,8),
             defender = new Character(0,0,0,2),
             attackCalculator = new MeleeAttackCalculator(attacker, 12),
-            defenseCalculator = new MeleeDefenseCalculator(defender, 10),
+            defenseCalculator = new PhisicalDefenseCalculator(defender, 10),
             combatResult = FightHandler.rollCombat(attackCalculator, defenseCalculator);
 
         expect(attackRoll).to.have.been.calledOnce;
@@ -47,7 +47,7 @@ describe("FightHandler tests", () => {
         let attacker = new Character(0,0,0,2),
             defender = new Character(0,0,0,8),
             attackCalculator = new MeleeAttackCalculator(attacker, 12),
-            defenseCalculator = new MeleeDefenseCalculator(defender, 15),
+            defenseCalculator = new PhisicalDefenseCalculator(defender, 15),
             combatResult = FightHandler.rollCombat(attackCalculator, defenseCalculator);
 
         expect(attackRoll).to.have.been.calledOnce;
