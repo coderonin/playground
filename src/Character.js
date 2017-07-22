@@ -1,5 +1,7 @@
+import Sphere from './Sphere.js';
+
 export default class Character {
-    constructor(dex, spr, agi, str){
+    constructor({dex, spr, agi, str, spheres}){
         this.dex = dex;
         this.spr = spr;
         this.agi = agi;
@@ -11,10 +13,22 @@ export default class Character {
             str: 0
         };
         this.calculateBaseAttributes();
+        this.setSpheres(spheres)
     }
 
     setWeapon(weapon){
         this._weapon = weapon;
+    }
+
+    setSpheres(spheres){
+        this._spheres = {};
+        (spheres || []).forEach((sphere) => {
+            this._spheres[sphere.name] = new Sphere(sphere);
+        });
+    }
+
+    getSphere(name){
+        return this._spheres[name];
     }
 
     set dex(d){

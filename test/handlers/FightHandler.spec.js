@@ -29,8 +29,8 @@ describe("FightHandler tests", () => {
     });
 
     it("should roll a combat with effective attack", () =>{
-        let attacker = new Character(0,0,0,8),
-            defender = new Character(0,0,0,2),
+        let attacker = new Character({ dex: 0, spr: 0, agi: 0, str: 8}),
+            defender = new Character({ dex: 0, spr: 0, agi: 0, str: 2}),
             attackCalculator = new MeleeAttackCalculator(attacker, 12),
             defenseCalculator = new PhisicalDefenseCalculator(defender, 10),
             combatResult = FightHandler.rollCombat(attackCalculator, defenseCalculator);
@@ -44,8 +44,8 @@ describe("FightHandler tests", () => {
     });
 
     it("should roll a combat with effective defense", () =>{
-        let attacker = new Character(0,0,0,2),
-            defender = new Character(0,0,0,8),
+        let attacker = new Character({ dex: 0, spr: 0, agi: 0, str: 2}),
+            defender = new Character({ dex: 0, spr: 0, agi: 0, str: 8}),
             attackCalculator = new MeleeAttackCalculator(attacker, 12),
             defenseCalculator = new PhisicalDefenseCalculator(defender, 15),
             combatResult = FightHandler.rollCombat(attackCalculator, defenseCalculator);

@@ -5,7 +5,7 @@ import MagicDefenseCalculator from "../../../src/calculators/defense/MagicDefens
 describe("MagicDefenseCalculator tests", () => {
 
     it("should create a MagicDefenseCalculator", () => {
-        let char = new Character(0,0,0,0),
+        let char = new Character({}),
             calculator = new MagicDefenseCalculator(char, 15);
 
         expect(calculator.character).to.be.equals(char);
@@ -13,14 +13,14 @@ describe("MagicDefenseCalculator tests", () => {
     });
 
     it("should get the defense rollCombat", () => {
-        let char = new Character(0,3,0,8),
+        let char = new Character({ dex: 0, spr: 3, agi: 0, str: 8}),
             calculator = new MagicDefenseCalculator(char, 10);
 
         expect(calculator.getRoll()).to.be.equals(18);
     });
 
     it("should get a combat result with effective defense", () => {
-        let char = new Character(3,0,8,0),
+        let char = new Character({ dex: 3, spr: 0, agi: 8, str: 0}),
             calculator = new MagicDefenseCalculator(char, 10);
 
         calculator.setDamage(0, 1);
@@ -31,7 +31,7 @@ describe("MagicDefenseCalculator tests", () => {
     });
 
     it("should get a combat result with effective attack", () => {
-        let char = new Character(3,0,8,0),
+        let char = new Character({ dex: 3, spr: 0, agi: 8, str: 0}),
             calculator = new MagicDefenseCalculator(char, 10);
 
         calculator.setDamage(10, 1);
@@ -42,7 +42,7 @@ describe("MagicDefenseCalculator tests", () => {
     });
 
     it("should get the the calculation for getDamage", () => {
-        let char = new Character(0,3,0,8),
+        let char = new Character({ dex: 0, spr: 3, agi: 0, str: 8}),
             calculator = new MagicDefenseCalculator(char, 10);
 
         calculator.setDamage(10, 1);

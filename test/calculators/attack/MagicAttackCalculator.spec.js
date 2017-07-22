@@ -4,7 +4,7 @@ import MagicAttackCalculator from "../../../src/calculators/attack/MagicAttackCa
 describe("MagicAttackCalculator tests", () => {
 
     it("should create a MagicAttackCalculator", () => {
-        let char = new Character(0,0,0,0),
+        let char = new Character({}),
             calculator = new MagicAttackCalculator(char, 15);
 
         expect(calculator.character).to.be.equals(char);
@@ -12,14 +12,14 @@ describe("MagicAttackCalculator tests", () => {
     });
 
     it("should get the attack rollCombat", () => {
-        let char = new Character(8,3,0,0),
+        let char = new Character({ dex: 8, spr: 3, agi: 0, str: 0}),
             calculator = new MagicAttackCalculator(char, 10);
 
         expect(calculator.getRoll()).to.be.equals(18);
     });
 
     it("should get base damage", () => {
-        let char = new Character(8,3,0,0),
+        let char = new Character({ dex: 8, spr: 3, agi: 0, str: 0}),
             calculator = new MagicAttackCalculator(char, 0);
 
         calculator.setSkill({

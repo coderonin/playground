@@ -4,7 +4,7 @@ import MeleeAttackCalculator from "../../../src/calculators/attack/MeleeAttackCa
 describe("MeleeAttackCalculator tests", () => {
 
     it("should create a MeleeAttackCalculator", () => {
-        let char = new Character(0,0,0,0),
+        let char = new Character({}),
             calculator = new MeleeAttackCalculator(char, 15);
 
         expect(calculator.character).to.be.equals(char);
@@ -12,14 +12,14 @@ describe("MeleeAttackCalculator tests", () => {
     });
 
     it("should get the attack rollCombat", () => {
-        let char = new Character(0,0,0,8),
+        let char = new Character({ dex: 0, spr: 0, agi: 0, str: 8}),
             calculator = new MeleeAttackCalculator(char, 10);
 
         expect(calculator.getRoll()).to.be.equals(18);
     });
 
     it("should get base damage", () => {
-        let char = new Character(0,0,0,8),
+        let char = new Character({ dex: 0, spr: 0, agi: 0, str: 8}),
             calculator = new MeleeAttackCalculator(char, 0);
 
         expect(calculator.getBaseDamage()).to.be.equals(8);

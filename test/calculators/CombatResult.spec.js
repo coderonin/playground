@@ -24,9 +24,7 @@ describe("CombatResult tests", () => {
         let calculator = new PhisicalDefenseCalculator(null, 0),
             result = new CombatResult(calculator);
 
-        sinon.stub(calculator, "getDamage", function(dmg){
-            return dmg + 10;
-        });
+        sinon.stub(calculator, "getDamage").callsFake((dmg) => dmg + 10);
 
         expect(result.getDamage(10)).to.be.equals(20);
 

@@ -4,7 +4,7 @@ import Calculator from "../../src/calculators/Calculator";
 describe("Calculator tests", () => {
 
     it("should create a calculator", () => {
-        let char = new Character(0,0,0,0),
+        let char = new Character({}),
             calculator = new Calculator(char, 15);
 
         expect(calculator.character).to.be.equals(char);

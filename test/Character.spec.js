@@ -1,4 +1,6 @@
 import Character from '../src/Character.js';
+import Sphere from '../src/Sphere.js';
+
 let sandbox = sinon.sandbox.create(),
     calculateBaseAttributes;
 
@@ -13,7 +15,7 @@ describe("Character class tests", () => {
     });
 
     it("should create a Character", () => {
-        let char = new Character(0, 0, 0, 0);
+        let char = new Character({});
         expect(char).not.to.be.null;
     });
 
@@ -24,7 +26,7 @@ describe("Character class tests", () => {
             SPR = 3,
             char;
 
-        char = new Character(DEX, SPR, AGI, STR);
+        char = new Character({ dex: DEX, spr: SPR, agi: AGI, str: STR });
         expect(calculateBaseAttributes).to.have.been.calledOnce;
 
         expect(char.maxHp).to.be.equals(85);
@@ -38,7 +40,7 @@ describe("Character class tests", () => {
     });
 
     it("should handle a weapon", () => {
-        let char = new Character(0, 0, 0, 0);
+        let char = new Character({});
 
         char.setWeapon({
             name:"weapon test",
@@ -53,5 +55,15 @@ describe("Character class tests", () => {
         expect(char._weapon).to.be.null;
         expect(char.getWeaponBonus()).to.be.equals(0);
         expect(char.getWeaponDamage()).to.be.equals(0);
+    });
+
+    it("should have spheres", () => {
+        let spheres = [
+                { name: "emision", value: 1, exp: 1, ease: 3 }
+            ],
+            char = new Character({spheres});
+
+        expect(char._spheres).not.to.be.null;
+        expect(char.getSphere("emision").name).to.be.equals("emision");
     });
 });
