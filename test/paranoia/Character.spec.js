@@ -66,4 +66,18 @@ describe("Character class tests", () => {
         expect(char._spheres).not.to.be.null;
         expect(char.getSphere("emision").name).to.be.equals("emision");
     });
+
+    it("should have skills", () => {
+        let skills = [
+                {
+                    name: "skill1",
+                    character: null,
+                    spheresNames: ["test"]
+                }
+            ],
+            char = new Character({skills});
+
+        expect(char._skills).not.to.be.null;
+        expect(char.getSkill("skill1").name).to.be.equals("skill1");
+    });
 });

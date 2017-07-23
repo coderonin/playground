@@ -27,6 +27,6 @@ export default class Skill {
             spheresValue += sphere.value;
             loe += (level * sphereLevelFactor ) + ease
         });
-        return basePercentStart + sphereValue - loe;
+        return basePercentStart + spheresValue - loe;
     }
 }
