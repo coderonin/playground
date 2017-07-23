@@ -1,6 +1,6 @@
-import Character from '../../../src/Character.js';
-import CombatResultTypes from "../../../src/enums/CombatResultTypes";
-import PhisicalDefenseCalculator from "../../../src/calculators/defense/PhisicalDefenseCalculator";
+import Character from '../../../../src/paranoia/Character.js';
+import CombatResultTypes from "../../../../src/paranoia/enums/CombatResultTypes";
+import PhisicalDefenseCalculator from "../../../../src/paranoia/calculators/defense/PhisicalDefenseCalculator";
 
 describe("PhisicalDefenseCalculator tests", () => {
 

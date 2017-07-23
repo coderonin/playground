@@ -1,9 +1,10 @@
 export default class Sphere {
-    constructor({name, value, exp, ease}){
+    constructor({name, value, exp, ease, level}){
         this.name = name;
         this.value = value || 0;
         this.exp = exp || 0;
         this.ease = ease;
+        this.level = level;
     }
 
     expUp(){

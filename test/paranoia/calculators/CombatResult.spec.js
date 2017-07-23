@@ -1,6 +1,6 @@
-import PhisicalDefenseCalculator from "../../src/calculators/defense/PhisicalDefenseCalculator";
-import CombatResult from "../../src/calculators/CombatResult";
-import CombatResultTypes from "../../src/enums/CombatResultTypes";
+import PhisicalDefenseCalculator from "../../../src/paranoia/calculators/defense/PhisicalDefenseCalculator";
+import CombatResult from "../../../src/paranoia/calculators/CombatResult";
+import CombatResultTypes from "../../../src/paranoia/enums/CombatResultTypes";
 
 describe("CombatResult tests", () => {
 

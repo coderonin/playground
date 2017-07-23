@@ -1,5 +1,5 @@
-import Character from '../../../src/Character.js';
-import MagicAttackCalculator from "../../../src/calculators/attack/MagicAttackCalculator";
+import Character from '../../../../src/paranoia/Character.js';
+import MagicAttackCalculator from "../../../../src/paranoia/calculators/attack/MagicAttackCalculator";
 
 describe("MagicAttackCalculator tests", () => {
 

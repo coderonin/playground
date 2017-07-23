@@ -1,5 +1,5 @@
-import Character from '../../../src/Character.js';
-import RangedAttackCalculator from "../../../src/calculators/attack/RangedAttackCalculator";
+import Character from '../../../../src/paranoia/Character.js';
+import RangedAttackCalculator from "../../../../src/paranoia/calculators/attack/RangedAttackCalculator";
 
 describe("RangedAttackCalculator tests", () => {
 

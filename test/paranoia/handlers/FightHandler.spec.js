@@ -1,8 +1,8 @@
-import Character from '../../src/Character.js';
-import FightHandler from '../../src/handlers/FightHandler.js';
-import MeleeAttackCalculator from "../../src/calculators/attack/MeleeAttackCalculator";
-import PhisicalDefenseCalculator from "../../src/calculators/defense/PhisicalDefenseCalculator";
-import CombatResultTypes from "../../src/enums/CombatResultTypes";
+import Character from '../../../src/paranoia/Character.js';
+import FightHandler from '../../../src/paranoia/handlers/FightHandler.js';
+import MeleeAttackCalculator from "../../../src/paranoia/calculators/attack/MeleeAttackCalculator";
+import PhisicalDefenseCalculator from "../../../src/paranoia/calculators/defense/PhisicalDefenseCalculator";
+import CombatResultTypes from "../../../src/paranoia/enums/CombatResultTypes";
 
 let sandbox = sinon.sandbox.create(),
     attackRoll,

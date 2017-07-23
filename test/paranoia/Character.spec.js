@@ -1,5 +1,5 @@
-import Character from '../src/Character.js';
-import Sphere from '../src/Sphere.js';
+import Character from '../../src/paranoia/Character.js';
+import Sphere from '../../src/paranoia/Sphere.js';
 
 let sandbox = sinon.sandbox.create(),
     calculateBaseAttributes;
@@ -48,13 +48,13 @@ describe("Character class tests", () => {
             getDamage: () => 5
         });
         expect(char._weapon.name).to.be.equals("weapon test");
-        expect(char.getWeaponBonus()).to.be.equals(10);
-        expect(char.getWeaponDamage()).to.be.equals(5);
+        expect(char.getAttackBonus()).to.be.equals(10);
+        expect(char.getAttackDamage()).to.be.equals(5);
 
         char.setWeapon(null);
         expect(char._weapon).to.be.null;
-        expect(char.getWeaponBonus()).to.be.equals(0);
-        expect(char.getWeaponDamage()).to.be.equals(0);
+        expect(char.getAttackBonus()).to.be.equals(0);
+        expect(char.getAttackDamage()).to.be.equals(0);
     });
 
     it("should have spheres", () => {

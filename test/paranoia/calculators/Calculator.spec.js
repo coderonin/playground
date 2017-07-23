@@ -1,5 +1,5 @@
-import Character from '../../src/Character.js';
-import Calculator from "../../src/calculators/Calculator";
+import Character from '../../../src/paranoia/Character.js';
+import Calculator from "../../../src/paranoia/calculators/Calculator";
 
 describe("Calculator tests", () => {
 

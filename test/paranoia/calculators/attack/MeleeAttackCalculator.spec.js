@@ -1,5 +1,5 @@
-import Character from '../../../src/Character.js';
-import MeleeAttackCalculator from "../../../src/calculators/attack/MeleeAttackCalculator";
+import Character from '../../../../src/paranoia/Character.js';
+import MeleeAttackCalculator from "../../../../src/paranoia/calculators/attack/MeleeAttackCalculator";
 
 describe("MeleeAttackCalculator tests", () => {
 

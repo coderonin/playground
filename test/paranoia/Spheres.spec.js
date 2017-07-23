@@ -1,4 +1,4 @@
-import Sphere from '../src/Sphere.js';
+import Sphere from '../../src/paranoia/Sphere.js';
 
 describe("Sphere class tests", () => {
 

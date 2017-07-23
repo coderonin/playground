@@ -1,7 +1,8 @@
 import Sphere from './Sphere.js';
+import Skill from './Skill.js';
 
 export default class Character {
-    constructor({dex, spr, agi, str, spheres}){
+    constructor({dex, spr, agi, str, spheres, skills}){
         this.dex = dex;
         this.spr = spr;
         this.agi = agi;
@@ -14,6 +15,7 @@ export default class Character {
         };
         this.calculateBaseAttributes();
         this.setSpheres(spheres)
+        this.setSkills(skills);
     }
 
     setWeapon(weapon){
@@ -29,6 +31,17 @@ export default class Character {
 
     getSphere(name){
         return this._spheres[name];
+    }
+
+    setSkills(skills){
+        this._skills = {};
+        (skills || []).forEach((skill) => {
+            this._skills[skill.name] = new Skill(skill);
+        });
+    }
+
+    getSkill(name){
+        return this._skills[name];
     }
 
     set dex(d){
@@ -98,11 +111,11 @@ export default class Character {
         this.mana = this.maxMana;
     }
 
-    getWeaponBonus(){
+    getAttackBonus(){
         return this._weapon ? this._weapon.getBonus() : 0;
     }
 
-    getWeaponDamage(){
+    getAttackDamage(){
         return this._weapon ? this._weapon.getDamage() : 0;
     }
 }
